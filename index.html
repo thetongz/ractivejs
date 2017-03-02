@@ -7,17 +7,21 @@
     <script src='http://cdn.ractivejs.org/latest/ractive.js'></script>
 </head>
 
+
 <body>
     <div id="app">
     </div>
 </body>
-
+<script id='template' type='text/ractive'>
+    <p>Hello, {{name}}!</p>
+</script>
 <script>
     var ractive = new Ractive({
         el: "#app",
-        template: "<p>{{greeting}}</p>"
+        template: "#template"
     })
-    ractive.set("greeting", "hello")
+    ractive.set("name", "hello")
 </script>
+
 
 </html>
