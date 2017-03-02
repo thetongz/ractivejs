@@ -1,0 +1,23 @@
+<!DOCTYPE>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8">
+    <title> RactiveJS example </title>
+    <script src='http://cdn.ractivejs.org/latest/ractive.js'></script>
+</head>
+
+<body>
+    <div id="app">
+    </div>
+</body>
+
+<script>
+    var ractive = new Ractive({
+        el: "#app",
+        template: "<p>{{greeting}}</p>"
+    })
+    ractive.set("greeting", "hello")
+</script>
+
+</html>
