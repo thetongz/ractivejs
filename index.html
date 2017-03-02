@@ -15,10 +15,12 @@
 
 <script id='template' type='text/ractive'>
     {{#with profile}}
-    <p> Hello, {{name}} </p>
-    {{#with other}}
-    <p> I will say {{greeting}} and sorry for {{goodbye}} </p>
-    {{/with}} {{/with}}
+        <p> Hello, {{name}} </p>
+            {{#with other}}
+                <p> I will say {{greeting}} and sorry for {{goodbye}} </p>
+            {{/with}} 
+            <div style="background-color: red;width: {{red*0.1}}%;height:20px"></div>
+    {{/with}}
 </script>
 
 <script>
@@ -31,7 +33,8 @@
                 other: {
                     greeting: "おはよう",
                     goodbye: "またね"
-                }
+                },
+                red: 40
             }
         }
     });
