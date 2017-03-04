@@ -16,11 +16,15 @@
 <script id='template' type='text/ractive'>
     {{#with profile}}
         <p> Hello, {{name}} </p>
+            {{#if tag}}
+                <h1> Hello again </h1>
+            {{/if}}
             {{#with other}}
                 <p> I will say {{greeting}} and sorry for {{goodbye}} </p>
             {{/with}} 
             <div style="background-color: red;width: {{red*0.1}}%;height:20px"></div>
     {{/with}}
+    <button type="button" id="hello" on-click="click"> Click </button>
 </script>
 
 <script>
@@ -37,7 +41,23 @@
                 red: 40
             }
         }
-    });
+    })
+    ractive.on({
+        click: function(event){
+            ractive.set({
+                profile: {
+                    name: "TheTonG",
+                    tag: true,
+                    other: {
+                        greeting: "おはよう",
+                        goodbye: "またね"
+                    },
+                    red: 40
+                },
+                
+            })
+        }
+    })
 </script>
 
 
