@@ -15,7 +15,6 @@
 
 <script id='template' type='text/ractive'>
     {{#with profile}}
-        <p> Hello, {{name}} </p>
             {{#if tag}}
                 <h1> Hello again </h1>
             {{/if}}
@@ -37,8 +36,11 @@
                 <td> {{age}} </td>
             </tr>
         {{/each}}
-        {{{thankyou}}}
     </table>
+    
+    {{{thankyou}}}
+    <input value="{{name}}" placeholder="Enter name" >
+    <p> Your name is {{name}} </p>
 </script>
 
 <script>
@@ -61,8 +63,8 @@
         el: "#app",
         template: "#template",
         data: {
+            name: "EEEE",
             profile: {
-                name: "TheTonG",
                 other: {
                     greeting: "おはよう",
                     goodbye: "またね"
@@ -77,7 +79,6 @@
         click: function(event){
             ractive.set({
                 profile: {
-                    name: "TheTonG",
                     tag: true,
                     other: {
                         greeting: "おはよう",
