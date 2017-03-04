@@ -24,7 +24,7 @@
             {{/with}} 
             <div style="background-color: red;width: {{red*0.1}}%;height:20px"></div>
     {{/with}}
-    <button type="button" id="hello" on-click="click"> Click </button>
+    <button type="button" id="hello" on-click="click"> Hello Again </button>
     <br>
     <table>
         <tr>
@@ -37,6 +37,7 @@
                 <td> {{age}} </td>
             </tr>
         {{/each}}
+        {{{thankyou}}}
     </table>
 </script>
 
@@ -68,7 +69,8 @@
                 },
                 red: 40
             },
-            list: list
+            list: list,
+            thankyou: '<h1> ありがとう </h1>'
         }
     })
     ractive.on({
@@ -80,10 +82,8 @@
                     other: {
                         greeting: "おはよう",
                         goodbye: "またね"
-                    },
-                    red: 40
-                },
-                
+                    }
+                }
             })
         }
     })
