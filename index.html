@@ -25,9 +25,37 @@
             <div style="background-color: red;width: {{red*0.1}}%;height:20px"></div>
     {{/with}}
     <button type="button" id="hello" on-click="click"> Click </button>
+    <br>
+    <table>
+        <tr>
+            <th> Name </th>
+            <th> Age </th>
+        </tr>
+        {{#each list}}
+            <tr>
+                <td> {{name}} </td>
+                <td> {{age}} </td>
+            </tr>
+        {{/each}}
+    </table>
 </script>
 
 <script>
+    var list = [
+        {
+            name: "John",
+            age: 50
+        },
+        {
+            name: "Johna",
+            age: 51
+        },
+        {
+            name: "Johnb",
+            age: 52
+        }
+    ]
+
     var ractive = new Ractive({
         el: "#app",
         template: "#template",
@@ -39,7 +67,8 @@
                     goodbye: "またね"
                 },
                 red: 40
-            }
+            },
+            list: list
         }
     })
     ractive.on({
